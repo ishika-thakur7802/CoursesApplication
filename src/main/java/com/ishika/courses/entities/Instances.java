@@ -13,6 +13,9 @@ public class Instances {
     @Column
     private int year;
 
+    @ManyToOne
+    private Courses course;
+
     public int getYear() {
         return year;
     }
