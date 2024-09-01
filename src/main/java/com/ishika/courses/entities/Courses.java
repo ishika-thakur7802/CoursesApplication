@@ -7,7 +7,12 @@ import java.util.List;
 
 @Entity
 public class Courses {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column
     private String ccode;
 
     @Column
@@ -16,19 +21,20 @@ public class Courses {
     @Column
     private String cdesc;
 
-
-
-    public Courses(String ctitle, String ccode, String cdesc) {
-        this.ctitle = ctitle;
-        this.ccode = ccode;
-        this.cdesc = cdesc;
-    }
-
     public Courses() {
 
     }
 
 
+    public Long getId()
+    {
+        return id;
+    }
+
+    public void setId(Long id)
+    {
+        this.id=id;
+    }
     public String getCcode()
     {
         return ccode;

@@ -17,11 +17,6 @@ public class CoursesServiceImpl implements CoursesService{
     }
 
     @Override
-    public Courses getCourse(Long courseID) {
-        return null;
-    }
-
-    @Override
     public Courses getCourse(long courseID){
         return null;
     }
