@@ -31,5 +31,10 @@ public class CoursesServiceImpl implements CoursesService{
         throw new RuntimeException("Course ID not found");
     }
 
+    @Override
+    public void deleteCourse(long id) {
+        coursesRepository.deleteById(id);
+    }
+
 
 }

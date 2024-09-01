@@ -24,8 +24,6 @@ public class CourseController {
         return "This is a Course Application. Welcome!";
     }
 
-
-
     @GetMapping("/api/courses")
     public List<Courses> getCourses()
     {
@@ -44,5 +42,10 @@ public class CourseController {
         return this.coursesService.getCourse(id);
     }
 
+    @DeleteMapping("api/courses/{id}")
+    public void deleteCourse(@PathVariable long id)
+    {
+        this.coursesService.deleteCourse(id);
+    }
 
 }
