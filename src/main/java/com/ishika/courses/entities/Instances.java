@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 public class Instances {
     @Id
-    private long courseID;
+    private long id;
 
     @Column
     private int sem;
@@ -14,6 +14,7 @@ public class Instances {
     private int year;
 
     @ManyToOne
+    @JoinColumn(name = "courseID")
     private Courses course;
 
     public int getYear() {
@@ -28,11 +29,11 @@ public class Instances {
     public void setSem(int sem) {
         this.sem = sem;
     }
-    public long getCourseID(){
-        return courseID;
+    public long getId(){
+        return id;
     }
-    public void setCourseID(long courseID){
-        this.courseID = courseID;
+    public void setId(long id){
+        this.id = id;
     }
 
 
