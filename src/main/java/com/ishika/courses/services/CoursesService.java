@@ -9,5 +9,7 @@ public interface CoursesService {
 
     Courses saveCourse(Courses course);
 
+    Courses getCourse(long id);
+
 
 }

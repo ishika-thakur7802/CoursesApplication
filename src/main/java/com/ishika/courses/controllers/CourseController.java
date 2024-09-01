@@ -38,6 +38,11 @@ public class CourseController {
         return this.coursesService.saveCourse(courses);
     }
 
+    @GetMapping("api/courses/{id}")
+    public Courses getCourse(@PathVariable long id)
+    {
+        return this.coursesService.getCourse(id);
+    }
 
 
 }

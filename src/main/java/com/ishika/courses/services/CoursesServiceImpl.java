@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CoursesServiceImpl implements CoursesService{
@@ -17,9 +18,17 @@ public class CoursesServiceImpl implements CoursesService{
     }
 
     @Override
-    public Courses saveCourse(Courses courses)
+    public Courses saveCourse(Courses course)
     {
-        return this.coursesRepository.save(courses);
+        return this.coursesRepository.save(course);
+    }
+
+    @Override
+    public Courses getCourse(long id) {
+        Optional<Courses> course = this.coursesRepository.findById(id);
+        if(course.isPresent())
+            return course.get();
+        throw new RuntimeException("Course ID not found");
     }
 
 
