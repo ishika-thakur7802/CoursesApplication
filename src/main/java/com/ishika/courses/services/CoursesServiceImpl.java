@@ -17,8 +17,9 @@ public class CoursesServiceImpl implements CoursesService{
     }
 
     @Override
-    public Courses getCourse(long courseID){
-        return null;
+    public Courses saveCourse(Courses courses)
+    {
+        return this.coursesRepository.save(courses);
     }
 
 

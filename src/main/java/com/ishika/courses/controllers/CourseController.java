@@ -32,7 +32,11 @@ public class CourseController {
         return this.coursesService.getCourses();
     }
 
-
+    @PostMapping("api/courses")
+    public Courses saveCourse(@RequestBody Courses courses)
+    {
+        return this.coursesService.saveCourse(courses);
+    }
 
 
 

@@ -7,7 +7,7 @@ import java.util.List;
 public interface CoursesService {
     List<Courses> getCourses();
 
-    Courses getCourse(long courseID);
+    Courses saveCourse(Courses course);
 
 
 }
