@@ -13,9 +13,9 @@ public class Instances {
     @Column
     private int year;
 
+    @JoinColumn(name="courseId")
     @ManyToOne
-    @JoinColumn(name = "courseID")
-    private Courses course;
+    private Courses courses;
 
     public int getYear() {
         return year;
