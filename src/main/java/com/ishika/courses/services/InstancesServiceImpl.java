@@ -23,6 +23,20 @@ public class InstancesServiceImpl implements InstancesService {
         return this.instancesRepository.findByYearAndSem(year, sem);
     }
 
+    @Override
+    public List<Instances> getInstances(int year, int sem, long id) {
+        return this.instancesRepository.findByYearAndSemAndId(year, sem, id);
+    }
+
+    @Override
+    public void deleteInstance(int year, int sem, long id) {
+        instancesRepository.deleteByYearAndSemAndId(year,sem,id);
+    }
+
+    @Override
+    public List<Instances> getAllInstances() {
+        return this.instancesRepository.findAll();
+    }
 
 
 }

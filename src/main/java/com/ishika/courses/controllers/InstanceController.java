@@ -20,6 +20,12 @@ public class InstanceController {
         return this.instancesService.saveInstance(instances);
     }
 
+    @GetMapping("api/instances")
+    public List<Instances> getAllInstances()
+    {
+        return this.instancesService.getAllInstances();
+    }
+
     @GetMapping("api/instances/{year}/{sem}")
     public List<Instances> getInstance(@PathVariable int year, @PathVariable int sem) {
         List<Instances> inst=this.instancesService.getInstance(year,sem);
@@ -27,5 +33,20 @@ public class InstanceController {
             return inst;
         throw new RuntimeException("Instance not found");
     }
+
+    @GetMapping("api/instances/{year}/{sem}/{id}")
+    public List<Instances> getInstances(@PathVariable int year, @PathVariable int sem, @PathVariable long id)
+    {
+        List<Instances> inst2= this.instancesService.getInstances(year,sem,id);
+        if(!inst2.isEmpty())
+            return inst2;
+        throw new RuntimeException("Instance not found");
+    }
+
+    @DeleteMapping("api/instances/{year}/{sem}/{id}")
+    public void deleteInstance(@PathVariable int year, @PathVariable int sem, @PathVariable long id) {
+        this.instancesService.deleteInstance(year,sem,id);
+    }
+
 
 }
