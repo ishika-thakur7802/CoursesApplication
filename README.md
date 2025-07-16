@@ -1,4 +1,16 @@
+# 📚 Courses & Instances Backend API (Spring Boot + MySQL)
 
+A modular, RESTful backend API built with **Spring Boot**, **Spring Data JPA**, and **MySQL** to manage academic **courses** and their **semester-wise instances**. Ideal for educational platforms, admin dashboards, and learning management systems (LMS).
+
+---
+
+## 🚀 Features
+
+✅ Built using Java + Spring Boot  
+✅ Clean 3-layer architecture: `Controller`, `Service`, `Repository`  
+✅ CRUD operations for Courses & Semester Instances  
+✅ Structured error handling  
+✅ Scalable, production-ready structure
 ---
 
 ## 🧪 REST API Endpoints
